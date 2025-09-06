@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JNHS - Design System</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="ds-body">
+
+    <div class="ds-container">
+<aside class="ds-sidebar">
+    <h1>JNHS<br>Design System</h1>
+    <nav>
+        <h3>Foundation</h3>
+        <ul>
+            <li><a href="#colors">Colors</a></li>
+            <li><a href="#typography">Typography</a></li>
+            <li><a href="#layout">Layout</a></li>
+            <li><a href="#icons">Icons</a></li>
+        </ul>
+        <h3>Components</h3>
+        <ul>
+            <li><a href="#headers">Headers</a></li>
+            <li><a href="#navigation">Navigation</a></li>
+            <li><a href="#cards">Cards</a></li>
+            <li><a href="#lists">Lists</a></li>
+            <li><a href="#buttons">Buttons</a></li>
+            <li><a href="#forms">Forms</a></li>
+            <li><a href="#overlay">Overlay / Modal</a></li>
+            <li><a href="#meal-plan">Timetable / Meal Plan</a></li>
+            <li><a href="#calendar">Calendar</a></li>
+            <li><a href="#book-item">Book Item</a></li>
+        </ul>
+    </nav>
+</aside>
+
+        <main class="ds-main-content">
+<section>
+    <h2 class="ds-section-title">디자인 시스템 사용 가이드</h2>
+    <p style="font-size: 18px; color: var(--text-primary);">
+        이 디자인 시스템은 전남고등학교 교내 웹서비스의 <strong>일관된 사용자 경험을 보장</strong>하고 <strong>개발 효율성을 높이기 위해</strong> 제작되었습니다.
+    </p>
+
+    <h3 class="ds-component-title" style="margin-top: 20px;">핵심 원칙: 컴포넌트의 구조적 무결성 유지</h3>
+    <p>
+        이 시스템의 스타일은 개별 클래스가 아닌, <strong>특정 HTML 구조와 결합된 클래스들의 '집합'</strong>에 적용됩니다. 따라서 예제 코드의 구조를 임의로 변경하면 디자인이 깨질 수 있습니다.
+    </p>
+    <ul style="padding-left: 20px; color: var(--text-secondary); line-height: 1.8; font-size: 16px;">
+        <li>
+            <strong>1. 구조가 곧 스타일입니다:</strong> 
+            <code>.info-card</code> 클래스는 내부에 <code>&lt;h2&gt;</code>와 <code>&lt;ul&gt;</code>이 있을 때를 가정하고 디자인되었습니다. 예제 코드의 <strong>HTML 구조와 클래스명을 하나의 세트로 사용</strong>해야만 의도된 디자인이 적용됩니다.
+        </li>
+        <li>
+            <strong>2. 컴포넌트 단위로 사용하세요:</strong> 
+            예제 코드를 '부품'처럼 분해하여 일부 클래스만 가져다 쓰지 마세요. 각 컴포넌트 블록을 하나의 <strong>'완성된 모듈'</strong>로 보고, 구조 전체를 가져가 사용하는 것을 원칙으로 합니다.
+        </li>
+        <li>
+            <strong>3. 내용은 실제 데이터로 채우세요:</strong>
+            구조와 클래스는 유지하되, 예제 속 '주요 공지'와 같은 텍스트나 목록 아이템 등은 실제 데이터로 자유롭게 변경하여 사용하세요.
+        </li>
+    </ul>
+    <p style="margin-top: 20px;">
+        <strong>잘못된 사용 예시:</strong> <code>.info-card</code> 안에 완전히 다른 구조의 <code>&lt;div&gt;</code>나 <code>&lt;p&gt;</code> 태그를 넣는 경우<br>
+        <strong>올바른 사용 예시:</strong> <code>.info-card</code> 예제의 HTML 구조를 그대로 가져와 내부 텍스트만 실제 공지사항 내용으로 바꾸는 경우
+    </p>
+</section>
+            <section id="colors">
+                <h2 class="ds-section-title">Colors</h2>
+                <p>앱 전체의 일관된 톤앤매너를 유지하는 핵심 색상 팔레트입니다.</p>
+                <div class="ds-color-grid">
+                    <div class="ds-color-swatch">
+                        <div class="swatch" style="background-color: var(--primary-color);"></div>
+                        <div class="info"><strong>Primary</strong><span>--primary-color</span><span>#0C7531</span></div>
+                    </div>
+                    <div class="ds-color-swatch">
+                        <div class="swatch" style="background-color: var(--bg-color);"></div>
+                        <div class="info"><strong>Background</strong><span>--bg-color</span><span>#121212</span></div>
+                    </div>
+                    <div class="ds-color-swatch">
+                        <div class="swatch" style="background-color: var(--card-bg-color);"></div>
+                        <div class="info"><strong>Card
+                                Background</strong><span>--card-bg-color</span><span>#1E1E1E</span></div>
+                    </div>
+                    <div class="ds-color-swatch">
+                        <div class="swatch" style="background-color: var(--text-primary);"></div>
+                        <div class="info"><strong>Text Primary</strong><span>--text-primary</span><span>#E0E0E0</span>
+                        </div>
+                    </div>
+                    <div class="ds-color-swatch">
+                        <div class="swatch" style="background-color: var(--text-secondary);"></div>
+                        <div class="info"><strong>Text
+                                Secondary</strong><span>--text-secondary</span><span>#A0A0A0</span></div>
+                    </div>
+                    <div class="ds-color-swatch">
+                        <div class="swatch" style="background-color: var(--border-color);"></div>
+                        <div class="info"><strong>Border</strong><span>--border-color</span><span>#333333</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="typography">
+                <h2 class="ds-section-title">Typography</h2>
+                <p>Noto Sans KR를 기반으로 한 타이포그래피 시스템입니다. 위계질서에 맞는 사용을 권장합니다.</p>
+                <div class="ds-typography-showcase">
+                    <h1>h1 / Welcom Text - 22px / 700</h1>
+                    <h2>h2 / Card Title - 18px</h2>
+                    <h3>h3 / Meal Menu Title - 16px</h3>
+                    <h4>h4 / D-Day Title - 14px</h4>
+                    <p style="color: white;">p / Body, Paragraph text - 14px ~ 15px</p>
+                    <a href="#" class="more-link">Link / More Link →</a>
+                    <span>span / Nav item text - 12px</span>
+                </div>
+            </section>
+
+            <section id="layout">
+                <h2 class="ds-section-title">Layout</h2>
+                <p>모바일 환경에 최적화된 `480px` 너비의 중앙 정렬 레이아웃을 사용합니다.</p>
+                <div class="ds-code-block">
+                    <pre><code>.app-container {
+    width: 100%;
+    max-width: 480px;
+    background-color: var(--bg-color);
+    padding: 0 20px;
+}</code></pre>
+                </div>
+            </section>
+
+            <section id="icons">
+                <h2 class="ds-section-title">Icons</h2>
+                <p>Font Awesome 6를 사용합니다. 아이콘은 명확한 의미 전달을 위해 사용하며, Primary 색상을 사용하는 것을 권장합니다.</p>
+                <div class="ds-icon-grid">
+                    <i class="fa-solid fa-house"></i>
+                    <i class="fa-solid fa-users"></i>
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <i class="fa-solid fa-bars"></i>
+                    <i class="fa-solid fa-calendar-day"></i>
+                    <i class="fa-solid fa-utensils"></i>
+                    <i class="fa-solid fa-bullhorn"></i>
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
+            </section>
+
+            <hr class="ds-divider">
+
+            <section id="headers">
+                <h2 class="ds-section-title">Headers</h2>
+                <p>페이지의 목적을 명확히 하는 헤더 컴포넌트입니다. 메인 페이지용과 서브 페이지용 두 가지 타입이 있습니다.</p>
+
+                <h3 class="ds-component-title">Main Header</h3>
+                <div class="ds-preview">
+                    <header class="app-header">
+                        <div class="welcome-text">
+                            <h2>홍길동님 환영합니다!</h2>
+                            <p>“도전은 성장의 기회다.” - 작자 미상</p>
+                        </div>
+                    </header>
+                </div>
+                <div class="ds-code-block">
+                    <button class="copy-btn">Copy</button>
+                    <pre><code>&lt;header class="app-header"&gt;
+    &lt;div class="welcome-text"&gt;
+        &lt;h2&gt;홍길동님 환영합니다!&lt;/h2&gt;
+        &lt;p&gt;“도전은 성장의 기회다.” - 작자 미상&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+                </div>
+
+                <h3 class="ds-component-title">Sub-page Header</h3>
+                <div class="ds-preview">
+                    <header class="sub-page-header">
+                        <a href="#" class="back-btn"><i class="fa-solid fa-arrow-left"></i></a>
+                        <div class="header-title">
+                            <h2>시간표 수정</h2>
+                            <p style="margin-bottom: 0;">0학년 0반 0번 홍길동</p>
+                        </div>
+                    </header>
+                </div>
+                <div class="ds-code-block">
+                    <button class="copy-btn">Copy</button>
+                    <pre><code>&lt;header class="sub-page-header"&gt;
+    &lt;a href="#" class="back-btn"&gt;&lt;i class="fa-solid fa-arrow-left"&gt;&lt;/i&gt;&lt;/a&gt;
+    &lt;div class="header-title"&gt;
+        &lt;h2&gt;페이지 제목&lt;/h2&gt;
+        &lt;p&gt;페이지 부가 설명&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+                </div>
+            </section>
+
+            <section id="navigation">
+                <h2 class="ds-section-title">Navigation</h2>
+                <p>앱의 주요 섹션으로 빠르게 이동할 수 있는 하단 고정 네비게이션입니다. 현재 활성화된 탭은 `.active` 클래스를 추가하여 강조합니다.</p>
+                <div class="ds-preview" style="height: 80px; padding: 0;">
+                    <nav class="bottom-nav">
+                        <a href="#" class="nav-item active">
+                            <i class="fa-solid fa-house"></i>
+                            <span>홈</span>
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fa-solid fa-users"></i> <span>커뮤니티</span>
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <span>문제 자료실</span>
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fa-solid fa-bars"></i>
+                            <span>전체메뉴</span>
+                        </a>
+                    </nav>
+                </div>
+                <div class="ds-code-block">
+                    <button class="copy-btn">Copy</button>
+                    <pre><code>&lt;nav class="bottom-nav"&gt;
+    &lt;a href="#" class="nav-item active"&gt;
+        &lt;i class="fa-solid fa-house"&gt;&lt;/i&gt;
+        &lt;span&gt;홈&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;a href="#" class="nav-item"&gt;
+        &lt;i class="fa-solid fa-users"&gt;&lt;/i&gt; &lt;span&gt;커뮤니티&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;a href="#" class="nav-item"&gt;
+        &lt;i class="fa-solid fa-graduation-cap"&gt;&lt;/i&gt;
+        &lt;span&gt;문제 자료실&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;a href="#" class="nav-item"&gt;
+        &lt;i class="fa-solid fa-bars"&gt;&lt;/i&gt;
+        &lt;span&gt;전체메뉴&lt;/span&gt;
+    &lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+                </div>
+            </section>
+
+            <section id="cards">
+                <h2 class="ds-section-title">Cards</h2>
+                <p>정보를 그룹화하여 보여주는 카드 컴포넌트입니다. 목적에 따라 다양한 형태로 변형될 수 있습니다.</p>
+
+                <h3 class="ds-component-title">Info Card (Base)</h3>
+                <div class="ds-preview">
+                    <section class="info-card notices">
+                        <h2><i class="fa-solid fa-bullhorn"></i> 주요 공지</h2>
+                        <ul>
+                            <li><a href="#">*중요* 도서대출 이용시 프로필사진 등록된 학생증만 이용가능!</a></li>
+                            <li><a href="#">[과학심화실험캠프 보고서 양식 및 제출 안내]</a></li>
+                            <li><a href="#">2025교내스포츠리그 스코어 보드</a></li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="ds-code-block">
+                    <button class="copy-btn">Copy</button>
+<pre><code>
+&lt;section class="info-card notices"&gt;
+    &lt;h2&gt;&lt;i class="fa-solid fa-bullhorn"&gt;&lt;/i&gt; 주요 공지&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;*중요* 도서대출 이용시 프로필사진 등록된 학생증만 이용가능!&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;[과학심화실험캠프 보고서 양식 및 제출 안내]&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;2025교내스포츠리그 스코어 보드&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/section&gt;
+</code></pre>
+                </div>
+
+                <h3 class="ds-component-title">D-Day Card Container</h3>
+                <div class="ds-preview">
+                    <section class="d-day-container" style="margin-bottom:0;">
+                        <div class="d-day-card">
+                            <h4>중간고사</h4>
+                            <span>D-40</span>
+                        </div>
+                        <div class="d-day-card">
+                            <h4>2026학년도 수능</h4>
+                            <span>D-68</span>
+                        </div>
+                    </section>
+                </div>
+                <div class="ds-code-block">
+                    <button class="copy-btn">Copy</button>
+                    <pre><code>&lt;section class="d-day-container"&gt;
+    &lt;div class="d-day-card"&gt;
+        &lt;h4&gt;이벤트 제목&lt;/h4&gt;
+        &lt;span&gt;D-XX&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="d-day-card"&gt;
+        &lt;h4&gt;이벤트 제목&lt;/h4&gt;
+        &lt;span&gt;D-XX&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+                </div>
+            </section>
+
+            <section id="lists">
+                <h2 class="ds-section-title">Lists</h2>
+                <p>반복적인 데이터를 목록 형태로 보여줄 때 사용합니다.</p>
+
+                <h3 class="ds-component-title">Community Post Item</h3>
+                <div class="ds-preview">
+                    <a href="#" class="post-item">
+                        <div class="post-content">
+                            <h3 class="post-title">커뮤니티 글 제목</h3>
+                            <div class="post-meta">
+                                <span><i class="fa-regular fa-user"></i>홍길동</span>
+                                <span><i class="fa-regular fa-clock"></i> 25.08.15 19:17:40</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="ds-code-block">
+                    <button class="copy-btn">Copy</button>
+                    <pre><code>&lt;a href="#" class="post-item"&gt;
+    &lt;div class="post-content"&gt;
+        &lt;h3 class="post-title"&gt;게시글 제목&lt;/h3&gt;
+        &lt;div class="post-meta"&gt;
+            &lt;span&gt;&lt;i class="fa-regular fa-user"&gt;&lt;/i&gt;작성자&lt;/span&gt;
+            &lt;span&gt;&lt;i class="fa-regular fa-clock"&gt;&lt;/i&gt; 작성 시간&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/a&gt;</code></pre>
+                </div>
+
+                <h3 class="ds-component-title">Exam Archive Item</h3>
+                <div class="ds-preview">
+                    <div class="exam-list">2025년-3월_고3_국어-1
+                        <div class="progress-cards-inner">
+                            <span class="effective-date">시행일: 2025-03-28</span>
+                            <button class="exam-search-button">다운로드</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="ds-code-block">
+                    <button class="copy-btn">Copy</button>
+                    <pre><code>&lt;div class="exam-list"&gt;시험지 제목
+    &lt;div class="progress-cards-inner"&gt;
+        &lt;span class="effective-date"&gt;시행일: YYYY-MM-DD&lt;/span&gt;
+        &lt;button class="exam-search-button"&gt;다운로드&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </section>
+
+            <section id="buttons">
+                <h2 class="ds-section-title">Buttons</h2>
+                <p>사용자의 액션을 유도하기 위한 다양한 종류의 버튼입니다.</p>
+                <h3 class="ds-component-title">Inline & Tab Buttons</h3>
+                <div class="ds-preview">
+                    <div class="ds-button-grid">
+                        <button class="exam-search-button">기본 버튼</button>
+                        <button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                    </div>
+                    <div class="day-selector" style="margin-bottom:0;">
+                        <button class="day-tab active">활성 탭</button>
+                        <button class="day-tab">비활성 탭</button>
+                    </div>
+                </div>
+                <div class="ds-code-block">
+                    <button class="copy-btn">Copy</button>
+                    <pre><code>&lt;!-- 기본 버튼 --&gt;
+&lt;button class="exam-search-button"&gt;버튼&lt;/button&gt;
+
+&lt;!-- 아이콘 버튼 --&gt;
+&lt;button class="edit-btn"&gt;&lt;i class="fa-solid fa-pen-to-square"&gt;&lt;/i&gt;&lt;/button&gt;
+
+&lt;!-- 탭 버튼 --&gt;
+&lt;button class="day-tab active"&gt;활성 탭&lt;/button&gt;
+&lt;button class="day-tab"&gt;비활성 탭&lt;/button&gt;</code></pre>
+                </div>
+
+                <h3 class="ds-component-title">Fixed & Floating Buttons</h3>
+                <div class="ds-preview" style="height: 120px;">
+                    <button class="reset-green-button">사진 재등록</button>
+                    <a href="#" class="fab-write-post"><i class="fa-solid fa-pen-to-square"></i></a>
+                </div>
+                <div class="ds-code-block">
+                    <button class="copy-btn">Copy</button>
+                    <pre><code>&lt;!-- 고정 버튼 --&gt;
+&lt;button class="reset-green-button"&gt;사진 재등록&lt;/button&gt;
+
+&lt;!-- 플로팅 액션 버튼 (FAB) --&gt;
+&lt;a href="#" class="fab-write-post"&gt;
+    &lt;i class="fa-solid fa-pen-to-square"&gt;&lt;/i&gt;
+&lt;/a&gt;</code></pre>
+                </div>
+            </section>
+
+            <section id="forms">
+                <h2 class="ds-section-title">Forms</h2>
+                <p>사용자로부터 입력을 받기 위한 폼 요소입니다.</p>
+
+                <h3 class="ds-component-title">Select Box Group</h3>
+                <div class="ds-preview">
+                    <div class="archive">
+                        <form action="#" method="POST" class="exam-form">
+                            <p>학년, 시험 시행일 선택</p>
+                            <div class="exam-grade">
+                                <select name="grade">
+                                    <option value="">학년 선택</option>
+                                    <option value="1">고1</option>
+                                </select>
+                                <select name="year">
+                                    <option value="">년도 선택</option>
+                                    <option value="2025">2025년</option>
+                                </select>
+                                <select name="month">
+                                    <option value="">월 선택</option>
+                                    <option value="3">3월</option>
+                                </select>
+                            </div>
+                            <div class="exam-submit">
+                                <button class="exam-search-button" type="submit">검색</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="ds-code-block">
+                    <button class="copy-btn">Copy</button>
+                    <pre><code>&lt;div class="archive"&gt;
+    &lt;form action="#" method="POST" class="exam-form"&gt;
+        &lt;p&gt;학년, 시험 시행일 선택&lt;/p&gt;
+        &lt;div class="exam-grade"&gt;
+            &lt;select name="grade"&gt;
+                &lt;option value=""&gt;학년 선택&lt;/option&gt;
+            &lt;/select&gt;
+            &lt;select name="year"&gt;
+                &lt;option value=""&gt;년도 선택&lt;/option&gt;
+            &lt;/select&gt;
+            &lt;select name="month"&gt;
+                &lt;option value=""&gt;월 선택&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/div&gt;
+        &lt;div class="exam-submit"&gt;
+            &lt;button class="exam-search-button" type="submit"&gt;검색&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/form&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </section>
+
+            <section id="overlay">
+                <h2 class="ds-section-title">Overlay / Modal</h2>
+                <p>현재 화면 위에 추가 정보를 제공하거나 액션을 요구할 때 사용하는 오버레이 컴포넌트입니다. 학생증 상세 정보 표시에 사용됩니다.</p>
+                <div class="ds-preview"
+                    style="height: 550px; justify-content: center; align-items: center; display: flex; padding:0;">
+                    <div class="overlay"
+                        style="display: flex; opacity: 1; position: relative; width: 100%; height: 100%;">
+                        <div class="overlay-content" style="transform: translateY(0); position:relative;">
+                            <div class="layer-bar"></div>
+                            <div class="layers-content">
+                                <img src="/assets/img/human.jpg"
+                                    width="100%" class="profile">
+                                <div class="profile-info">
+                                    <img src="https://img.jeonnam.school/logo.png" width="40px"
+                                        style="margin-right: 10px;">
+                                    <span class="profile-infomation">O학년 O반 O번 홍길동</span>
+                                </div>
+                                <div class="barcode" style="margin-top: 20px;">
+                                    <img src="/assets/img/barcode.png" width="100%" alt="barcode">
+                                </div>
+                                <div class="barcode-center">
+                                    <p class="barcode-bar" style="color:black">000000000</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ds-code-block">
+                    <button class="copy-btn">Copy</button>
+                    <pre><code>&lt;!-- 학생증 레이어 --&gt;
+&lt;div class="overlay" id="overlay"&gt;
+    &lt;div class="overlay-content" id="overlay-content"&gt;
+        &lt;div class="layer-bar"&gt;&lt;/div&gt;
+        &lt;button class="close-btn" id="close-btn"&gt;&lt;/button&gt;
+        &lt;div class="layers-content"&gt;
+            &lt;img src="[프로필 이미지 경로]" class="profile"&gt;
+            &lt;div class="profile-info"&gt;
+                &lt;img src="https://img.jeonnam.school/logo.png" width="40px"&gt; 
+                &lt;span class="profile-infomation"&gt;0학년 0반 0번 홍길동&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class="barcode"&gt;&lt;img src="[바코드 이미지 경로]"&gt;&lt;/div&gt;
+            &lt;div class="barcode-center"&gt;
+                &lt;p class="barcode-bar"&gt;[바코드 숫자]&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </section>
+<section id="meal-plan">
+    <h2 class="ds-section-title">Timetable / Meal Plan</h2>
+    <p>요일 탭과 해당 요일의 내용을 보여주는 컴포넌트입니다. 시간표와 주간 식단표 페이지에서 공통으로 사용됩니다.</p>
+
+    <h3 class="ds-component-title">Timetable / Meal Plan Preview</h3>
+    <div class="ds-preview">
+        <nav class="day-selector">
+            <button class="day-tab" data-day="Monday">월</button>
+            <button class="day-tab" data-day="Tuesday">화</button>
+            <button class="day-tab" data-day="Wednesday">수</button>
+            <button class="day-tab" data-day="Thursday">목</button>
+            <button class="day-tab" data-day="Friday">금</button>
+        </nav>
+
+<main class="timetable-content">
+   <div class="day-schedule active" id="Monday">                <div class="class-item"><span class="period">중식</span>
+                    <div class="class-details">
+                        <p class="details" style="margin-bottom: 0px;">친환경보리쌀밥 <br>모듬국밥 (2.5.6.9.10.12.13.15.16)<br>순두부찜&amp;간장양념장 (5.6.13)<br>쌈배추부추겉절이 (13)<br>돼지고기김치볶음 (5.6.9.10.12.13.15)<br>장각오븐구이 (5.6.13.15.18)<br>깍두기 (9)<br>비타사과음료 (13)</p>
+                    </div>
+                </div>
+            
+                <div class="class-item"><span class="period">석식</span>
+                    <div class="class-details">
+                        <p class="details" style="margin-bottom: 0px;">백미밥 <br>나가사끼짬뽕 (5.6.9.13.16.17.18)<br>쥐어채볶음 (2.5.6.13)<br>멘츠카츠&amp;브라운소스 (5.15)<br>배추김치 (9)<br>달걀후라이 (1.5)<br>쉐이크(설레임) (1.2)</p>
+                    </div>
+                </div>
+            
+</div><div class="day-schedule" id="Tuesday">                <div class="class-item"><span class="period">중식</span>
+                    <div class="class-details">
+                        <p class="details" style="margin-bottom: 0px;">친환경기장쌀밥 <br>참치김치찌개 (5.6.7.9.12.13.15.17.18)<br>닭정육감자데리조림 (5.6.13.15.16)<br>왕새우무조림 (5.6.9.13)<br>파김치 (9)<br>깍두기 (9)<br>뽀또치즈머핀 (1.2.5.6)</p>
+                    </div>
+                </div>
+            
+                <div class="class-item"><span class="period">석식</span>
+                    <div class="class-details">
+                        <p class="details" style="margin-bottom: 0px;">친환경검정쌀밥 <br>소고기무국&amp;당면사리 (5.9.16)<br>메추리알곤약장조림 (1.5.6.13)<br>곱창순대볶음 (2.5.6.10.12.13.15.16)<br>배추김치 (9)<br>빠삐코초코 (2)</p>
+                    </div>
+                </div>
+            
+</div><div class="day-schedule" id="Wednesday">                <div class="class-item"><span class="period">중식</span>
+                    <div class="class-details">
+                        <p class="details" style="margin-bottom: 0px;">후리가케볶음밥 (1.2.5.6.9.10.13.15.16.18)<br>돈코츠라멘 (1.2.5.6.9.10.12.13.15.16)<br>솎음열무된장무침 (5.6)<br>하오츠치킨 (5.15)<br>배추김치 (9)<br>망고주스 (13)<br>요거베리마카롱 (1.2.6)</p>
+                    </div>
+                </div>
+            
+                <div class="class-item"><span class="period">석식</span>
+                    <div class="class-details">
+                        <p class="details" style="margin-bottom: 0px;">식단 정보가 없습니다.</p>
+                    </div>
+                </div>
+            
+</div><div class="day-schedule" id="Thursday">                <div class="class-item"><span class="period">중식</span>
+                    <div class="class-details">
+                        <p class="details" style="margin-bottom: 0px;">친환경찰홍미밥 <br>꼬지어묵달걀국 (1.5.6.9)<br>김치해물전 (5.6.9.13.17)<br>경양식돈까스&amp;브라운소스 (1.2.5.6.10.12.13.18)<br>깍두기 (9)<br>열무김치 (9)<br>과채주스 (13)</p>
+                    </div>
+                </div>
+            
+                <div class="class-item"><span class="period">석식</span>
+                    <div class="class-details">
+                        <p class="details" style="margin-bottom: 0px;">치즈불닭덮밥 (2.5.6.12.13.15.18)<br>콩나물냉국 (5)<br>오이부추생채 (5.6.13)<br>대패삼겹데리채소볶음 (5.6.10.13.16)<br>배추김치 (9)<br>딸기도넛 (1.2.5.6)<br>엔요300 (2)</p>
+                    </div>
+                </div>
+            
+</div><div class="day-schedule" id="Friday">                <div class="class-item"><span class="period">중식</span>
+                    <div class="class-details">
+                        <p class="details" style="margin-bottom: 0px;">친환경차조밥 <br>팽이버섯두부된장국 (5.6.9)<br>방울어묵비엔나칠리소스볶음 (1.2.5.6.10.12.13.15.16)<br>함박스테이크&amp;달걀후라이 (1.2.5.6.10.12.13.15.16)<br>파김치 (9)<br>배추김치 (9)<br>오렌지주스 (13)</p>
+                    </div>
+                </div>
+            
+                <div class="class-item"><span class="period">석식</span>
+                    <div class="class-details">
+                        <p class="details" style="margin-bottom: 0px;">백미밥 <br>베이컨크림파스타 (1.2.5.6.9.10.12.13.15.16)<br>청경채된장무침 (5.6)<br>붐바오븐치킨 (5.15)<br>깍두기 (9)<br>마시는음료(피크닉) <br>수제마늘바게트 (2.5.6)<br>황도샐러드&amp;키위드레싱 (1.2.5.6.11.13)</p>
+                    </div>
+                </div>
+            
+</div>        </main>
+    </div>
+    <div class="ds-code-block">
+        <button class="copy-btn">Copy</button>
+        <pre><code>&lt;nav class="day-selector"&gt;
+    &lt;button class="day-tab" data-day="Monday"&gt;월&lt;/button&gt;
+    &lt;!-- (화~금 탭) --&gt;
+&lt;/nav&gt;
+
+&lt;main class="timetable-content"&gt;
+   &lt;div class="day-schedule" id="Monday"&gt;
+        &lt;!-- 월요일 콘텐츠 --&gt;
+        &lt;div class="class-item"&gt;
+            &lt;span class="period"&gt;1교시&lt;/span&gt;
+            &lt;div class="class-details"&gt;
+                &lt;h3 class="subject"&gt;과목명&lt;/h3&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class="day-schedule" id="Tuesday"&gt;
+        &lt;!-- 화요일 콘텐츠 --&gt;
+   &lt;/div&gt;
+   &lt;!-- (수~금 콘텐츠) --&gt;
+&lt;/main&gt;</code></pre>
+    </div>
+</section>
+<section id="calendar">
+    <h2 class="ds-section-title">Calendar & Schedule List</h2>
+    <p>학사일정 페이지를 구성하는 캘린더와 하단의 일정 목록 컴포넌트입니다. 아래 미리보기는 Javascript로 동적으로 렌더링됩니다.</p>
+
+    <h3 class="ds-component-title">Calendar & List Preview</h3>
+    <div class="ds-preview">
+        <!-- 캘린더 컨테이너 -->
+        <div class="calendar-container" style="margin-bottom:0;">
+            <div class="calendar-controls">
+                <button id="prev-month-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                <h3 id="current-month-title"></h3>
+                <button id="next-month-btn"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+            <div class="calendar-grid">
+                <div class="calendar-weekdays">
+                    <div>일</div><div>월</div><div>화</div><div>수</div><div>목</div><div>금</div><div>토</div>
+                </div>
+                <div class="calendar-dates" id="calendar-dates-grid">
+                    <!-- JS에 의해 날짜가 채워집니다. -->
+                </div>
+            </div>
+        </div>
+        <!-- 일정 목록 컨테이너 -->
+        <div class="schedule-list" id="schedule-list-container">
+             <!-- JS에 의해 일정이 채워집니다. -->
+        </div>
+    </div>
+    <div class="ds-code-block">
+        <button class="copy-btn">Copy</button>
+        <pre><code>&lt;!-- 캘린더 컨테이너 --&gt;
+&lt;div class="calendar-container"&gt;
+    &lt;div class="calendar-controls"&gt;
+        &lt;button id="prev-month-btn"&gt;&lt;i class="fa-solid fa-chevron-left"&gt;&lt;/i&gt;&lt;/button&gt;
+        &lt;h3 id="current-month-title"&gt;&lt;/h3&gt;
+        &lt;button id="next-month-btn"&gt;&lt;i class="fa-solid fa-chevron-right"&gt;&lt;/i&gt;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="calendar-grid"&gt;
+        &lt;div class="calendar-weekdays"&gt;
+            &lt;div&gt;일&lt;/div&gt;&lt;!-- ... --&gt;&lt;div&gt;토&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="calendar-dates" id="calendar-dates-grid"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- 일정 목록 컨테이너 --&gt;
+&lt;div class="schedule-list" id="schedule-list-container"&gt;&lt;/div&gt;</code></pre>
+    </div>
+</section>
+<section id="book-item">
+    <h2 class="ds-section-title">Book Item</h2>
+    <p>도서관 검색 결과 페이지에서 사용하는 도서 정보 카드입니다. 대출 가능 여부에 따라 상태 표시가 달라집니다.</p>
+
+    <h3 class="ds-component-title">Book List Preview</h3>
+    <div class="ds-preview">
+        <div class="search-results">
+            <div class="book-item">
+                <img src="https://image.aladin.co.kr/product/15/55/cover500/s692534517_1.jpg" alt="도서 표지" class="book-cover" onerror="this.src='https://read365.edunet.net/img/no_book.805feab5.png'">
+                <div class="book-details">
+                    <div class="book-info">
+                        <h3 class="book-title">프린키피아</h3>
+                        <p class="book-meta">아이작 뉴턴 지음; 이무현 옮김 | 교우사</p>
+                    </div>
+                    <div class="book-footer">
+                        <div class="book-category"><span>기타</span></div>
+                        <div class="book-status available">
+                            <span>대출가능</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="book-item">
+                <img src="https://image.aladin.co.kr/product/26005/0/cover500/k362737327_1.jpg" alt="도서 표지" class="book-cover" onerror="this.src='https://read365.edunet.net/img/no_book.805feab5.png'">
+                <div class="book-details">
+                    <div class="book-info">
+                        <h3 class="book-title">영화 속 빅데이터 인문학</h3>
+                        <p class="book-meta">김영진 지음;박선화 그림 | 팜파스</p>
+                    </div>
+                    <div class="book-footer">
+                        <div class="book-category"><span>기타</span></div>
+                        <div class="book-status unavailable">
+                            <span>대출중</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ds-code-block">
+        <button class="copy-btn">Copy</button>
+        <pre><code>&lt;div class="book-item"&gt;
+    &lt;img src="[표지 이미지 경로]" alt="도서 표지" class="book-cover"&gt;
+    &lt;div class="book-details"&gt;
+        &lt;div class="book-info"&gt;
+            &lt;h3 class="book-title"&gt;[도서명]&lt;/h3&gt;
+            &lt;p class="book-meta"&gt;[저자] | [출판사]&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="book-footer"&gt;
+            &lt;div class="book-category"&gt;&lt;span&gt;[카테고리]&lt;/span&gt;&lt;/div&gt;
+            &lt;!-- 대출 가능 시 class="book-status available" --&gt;
+            &lt;!-- 대출 불가 시 class="book-status unavailable" --&gt;
+            &lt;div class="book-status available"&gt;
+                &lt;span&gt;[대출 상태]&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+</section>
+<footer>
+    © 2025 JNHS Student council, Wonchan Lee, Software Solution Club. All Rights Reserved.
+</footer>
+        </main>
+        
+    </div>
+
+    <script src="/js/design-system.js"></script>
+</body>
+
+</html>
