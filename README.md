@@ -8,6 +8,8 @@
 이 프로젝트는 반복적으로 사용되는 UI 컴포넌트를 표준화하여, 새로운 기능을 개발하거나 기존 기능을 유지보수할 때 디자인 일관성을 유지하고 개발 속도를 높이는 것을 목표로 합니다.
 
 ## Design System Website
+아래 링크를 통해 디자인 시스템을 직접 확인할 수 있습니다.
+
 [https://jnhs-designsystem.netlify.app/](https://jnhs-designsystem.netlify.app/)
 
 ## 📖 핵심 사용 원칙: 구조적 무결성 유지
